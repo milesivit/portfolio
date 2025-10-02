@@ -289,7 +289,7 @@ img.about-photo,
 
 /* === Desktop por defecto (>=1025px) === */
 .bg-en { background-image: url('./img/portfoliodesktopen.gif'); }
-.bg-es { background-image: url('./img/pruebaa.gif'); }
+.bg-es { background-image: url('./img/portfoliodesktopes.gif'); }
 
 /* === Tablet (769px – 1024px) === */
 @media (max-width: 1024px) and (min-width: 769px) {

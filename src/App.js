@@ -11,10 +11,12 @@ import sqlLogo from './img/sqlserver.png';
 import cicdLogo from './img/github.png';
 import clickupLogo from './img/clickup3.png';
 import vboxLogo from './img/virtualbox.png';
+import git from './img/git.png';
 
 function App() {
   const [language, setLanguage] = useState('EN');
   const [visible, setVisible] = useState(null);
+  const [visibleWork, setVisibleWork] = useState(null);
 
   const toggleLanguage = () => {
     setLanguage(language === 'EN' ? 'ES' : 'EN');
@@ -75,6 +77,58 @@ function App() {
     }
   ];
 
+  // works en un array
+  const works = [
+    {
+      id: 1,
+      titleEN: "Retrocinema with Bootstrap",
+      titleES: "Cine retro con Bootstrap ",
+      repo: "https://github.com/milesivit/Cine",
+      descEN: "Bootstrap web application that simulates the experience of a cinema website. It includes sections such as movie listings, ticketing, combos, promotions, and user profile. The design is fully responsive, adapting to both mobile devices and desktops.",
+      descES: "Aplicación web Bootstrap que simula la experiencia de una página de cine. Incluye secciones como cartelera, boletería, combos, promociones y perfil de usuario. El diseño es totalmente responsivo, adaptándose a dispositivos móviles y escritorios."
+    },
+    {
+      id: 2,
+      titleEN: "De camino a casa with Ant Desing and React",
+      titleES: "De camino a casa con Ant Desing y React",
+      repo: "https://github.com/milesivit/de_camino_a_casa",
+      descEN: "Web application built with React and Ant Design to facilitate animal adoption. It allows users to view available pets and see their details. It includes a test to help find your best friend, as well as information about foundations and responsible adoption.",
+      descES: "Aplicación web en React y Ant Design para facilitar la adopción de animales. Permite ver mascotas disponibles y conocer sus detalles. Incluye un test para encontrar a tu mejor amigo, además de información sobre fundaciones y adopción responsable."
+    },
+    {
+      id: 3,
+      titleEN: "Airline System with Django",
+      titleES: "Sistema de aerolinea con Django",
+      repo: "https://github.com/milesivit/EFI-Aviones-ing",
+      descEN: "Web application that simulates an airline management system. Users can register, log in, and purchase tickets. Administrators have access to advanced features such as creating airplanes, managing flights, and overseeing system information.",
+      descES: "Aplicación web que simula un sistema de gestión de aerolíneas. Los usuarios pueden registrarse, iniciar sesión y comprar pasajes. Los administradores tienen acceso a funcionalidades avanzadas como crear aviones, gestionar vuelos y administrar la información del sistema."
+    },
+    {
+      id: 4,
+      titleEN: "Inventory management system with Flask",
+      titleES: "Sistema de gestión de inventario con Flask",
+      repo: "https://github.com/milesivit/gestion-de-inventario",
+      descEN: "Web application built with Flask that implements a full CRUD for product management. The system tracks stock in real time: whenever a sale is made, the available quantity is automatically reduced.",
+      descES: "Aplicación web desarrollada con Flask que implementa un CRUD completo para la gestión de productos. El sistema controla el stock en tiempo real: cada vez que se registra una venta, la cantidad disponible se descuenta automáticamente."
+    },
+    {
+      id: 5,
+      titleES: "Frontend: React consumiendo API REST para CRUD completo",
+      titleEN: "Frontend: React consuming a REST API for full CRUD operations",
+      repo: "https://github.com/milesivit/FRONT-REACT2",
+      descEN: "Web application built with React that consumes a REST API to perform full CRUD operations for users and products. It includes a password recovery system with Gmail notifications, user and product management, and direct integration with the backend to keep data synchronized.",
+      descES: "Aplicación web desarrollada en React que consume una API REST para realizar un CRUD completo de usuarios y productos. Incluye sistema de recuperación de contraseña con notificación por Gmail, gestión de notificaciones y conexión directa con el backend para mantener la información sincronizada."
+    },
+    {
+      id: 6,
+      titleES: "Backend: API REST con Node.js y Express",
+      titleEN: "Backend: API REST with Node.js and Express",
+      repo: "https://github.com/milesivit/back-nodejs",
+      descEN: "REST API built with Node.js and Express, handling the system’s logic for users and products. It provides endpoints for full CRUD operations, manages authentication and validations, and sends errors to the frontend for proper notification handling.",
+      descES: "API REST desarrollada con Node.js y Express, que gestiona la lógica del sistema de usuarios y productos. Provee endpoints para realizar un CRUD completo, maneja autenticación y validaciones, y envía los errores al frontend para un manejo correcto de las notificaciones."
+    }
+  ];
+
   return (
       <div>
         {/* Navbar */}
@@ -104,8 +158,8 @@ function App() {
             <div className="collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item"><a className="nav-link" href="#skills">{language === 'EN' ? 'Skills' : 'Habilidades'}</a></li>
-                <li className="nav-item"><a className="nav-link" href="#works">{language === 'EN' ? 'Works' : 'Proyectos'}</a></li>
                 <li className="nav-item"><a className="nav-link" href="#experience">{language === 'EN' ? 'Experience' : 'Experiencia'}</a></li>
+                <li className="nav-item"><a className="nav-link" href="#works">{language === 'EN' ? 'Works' : 'Proyectos'}</a></li>
                 <li className="nav-item"><a className="nav-link" href="#about">{language === 'EN' ? 'About me' : 'Sobre mi'}</a></li>
                 <li className="nav-item">
                   <a 
@@ -177,13 +231,80 @@ function App() {
             </div>
           </div>
         </section>
-    
-        <section id="works" className="works-section">
-          <h2>{language === 'EN' ? 'Works' : 'Proyectos'}</h2>
-        </section>
-    
+
         <section id="experience" className="experience-section">
           <h2>{language === 'EN' ? 'Experience' : 'Experiencia'}</h2>
+        </section>
+
+                {/* Works */}
+        <section id="works" className="works-section">
+          <div className="container py-5">
+            <h2 className="mb-4 typewriter-heading">
+              <Typewriter
+                options={{
+                  strings: ['Works', 'Proyectos', 'プロジェクト'],
+                  autoStart: true,
+                  loop: true,
+                  delay: 100,
+                  deleteSpeed: 50,
+                }}
+              />
+            </h2>
+
+            <div className="row g-4">
+              {works.map(work => (
+                <div key={work.id} className="col-md-4">
+                  <div className="work-card shadow-sm d-flex flex-column align-items-center">
+                    <h5>{language === 'EN' ? work.titleEN : work.titleES}</h5>
+
+                    {/* Cuadrado clickeable al repo */}
+                    <div 
+                      onClick={() => window.open(work.repo, "_blank")}
+                      className="repo-box"
+                    >
+                        <img 
+                          src={git}   // importa tu PNG o SVG de GitHub arriba
+                          alt="GitHub Repo"
+                          style={{ width: '100px', height: '37px' }}
+                        />
+                    </div>
+
+                    {/* Botón para abrir modal */}
+                    <Button 
+                      label={language === 'EN' ? "Information" : "Información"} 
+                      onClick={() => setVisibleWork(work.id)} 
+                      className="custom-work-btn mt-3"
+                    />
+                  </div>
+
+                  {/* Modal para cada work */}
+                  <Dialog 
+                    header={language === 'EN' ? work.titleEN : work.titleES} 
+                    visible={visibleWork === work.id} 
+                    className="work-dialog"
+                    onHide={() => setVisibleWork(null)}
+                  >
+                    <div className="dialog-content">
+                      <p>{language === 'EN' ? work.descEN : work.descES}</p>
+                    </div>
+
+                    {(work.id === 1 || work.id === 2) && (
+                      <Button
+                        label={language === 'EN' ? "Live demo" : "Ver página"}
+                        onClick={() => {
+                          const liveLink = work.id === 1 
+                            ? "https://retrocine.netlify.app/" 
+                            : "https://decaminoacasa.vercel.app/";
+                          window.open(liveLink, "_blank");
+                        }}
+                        className="custom-work-btn mt-3"
+                      />
+                    )}
+                  </Dialog>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
     
         <section id="about" className="about-section">

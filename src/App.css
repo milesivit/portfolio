@@ -12,6 +12,12 @@ body {
   transform: scaleY(1.2);
 }
 
+.typewriter-heading {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.9rem;
+  transform: scaleY(1.2);
+}
+
 .navbar {
   position: fixed;
   top: 0;
@@ -81,6 +87,37 @@ html {
   text-align: center;
 }
 
+.custom-skill-btn {
+  background: linear-gradient(135deg, #d9b4ea, #a5f1b1);
+  color: #333 !important;
+  font-weight: bold;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.custom-skill-btn:hover {
+  background: linear-gradient(135deg, #a5f1b1, #d9b4ea);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+/* Estilo base del modal */
+.skill-dialog {
+  width: 40vw;         /* Desktop */
+  max-width: 600px;    /* No más grande de 600px */
+  border-radius: 15px;
+}
+
+.dialog-content {
+  max-height: 50vh;    /* Limita la altura del contenido */
+  overflow-y: auto;    /* Agrega scroll interno si el texto es muy largo */
+  padding-right: 10px; /* Espacio para el scroll */
+  text-align: justify;
+}
+
 /* === Desktop por defecto (>=1025px) === */
 .bg-en { background-image: url('./img/portfoliodesktopen.gif'); }
 .bg-es { background-image: url('./img/pruebaa.gif'); }
@@ -95,5 +132,15 @@ html {
 @media (max-width: 768px) {
   .bg-en { background-image: url('./img/portfolioMobileEn.gif'); }
   .bg-es { background-image: url('./img/portfolioMobileEs.gif'); }
+
+  .skill-dialog {
+    width: 90vw !important;   /* Ocupa casi todo el ancho */
+    max-width: 90vw;          /* Evita que quede apretado */
+  }
+
+  .dialog-content {
+    max-height: 60vh;   /* Más alto en mobile */
+    font-size: 0.9rem;  /* Texto un poco más chico para legibilidad */
+  }
 }
 

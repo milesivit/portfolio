@@ -94,6 +94,6 @@ html {
 /* === Mobile (<=768px) === */
 @media (max-width: 768px) {
   .bg-en { background-image: url('./img/portfolioMobileEn.gif'); }
-  .bg-es { background-image: url('./img/portfolioMobile.gif'); }
+  .bg-es { background-image: url('./img/portfolioMobileEs.gif'); }
 }
 

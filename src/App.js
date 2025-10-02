@@ -12,6 +12,8 @@ import cicdLogo from './img/github.png';
 import clickupLogo from './img/clickup3.png';
 import vboxLogo from './img/virtualbox.png';
 import git from './img/git.png';
+import ferre from './img/ferre.png';
+import remate from './img/logo.png';
 
 function App() {
   const [language, setLanguage] = useState('EN');
@@ -76,6 +78,28 @@ function App() {
       descES: "Tengo experiencia y conocimientos en software de virtualización como VirtualBox y Proxmox, habiendo ejecutado sistemas operativos como Windows, Ubuntu, Raspberry Pi OS, entre otros."
     }
   ];
+
+  const experiences = [
+    {
+      id: 1,
+      titleEN: "Programmer / Ferretera Central",
+      titleES: "Programadora / Ferretera Central",
+      period: "03/02/2025 – 07/08/2025",
+      descEN: "Back-end development: implemented endpoints covering the full flow from object layer to controller, allowing front-end consumption using Java Spring Boot. Also worked on front-end with Java Spring Boot, consuming API endpoints. Collaborated on efficient data access and integration between the database and application layers. Managed and resolved tickets on time using the osTicket support tool.",
+      descES: "En desarrollo back-end, programé endpoints implementando el flujo completo desde la capa de objetos hasta el controlador, permitiendo que el front-end los consuma, utilizando Java Spring Boot. También trabajé en front-end con Java Spring Boot, consumiendo los endpoints de la API. Colaboré en el diseño de un acceso eficiente a los datos e integración entre la base de datos y las capas de la aplicación. Además, gestioné y resolví tickets en tiempo y forma mediante la herramienta de soporte osTicket.",
+      img: ferre
+    },
+    {
+      id: 2,
+      titleEN: "Desktop Application – Remate Celada (Remote task - Jan/2025)",
+      titleES: "Aplicación de escritorio – Remate Celada (Tarea remota - Enero/2025)",
+      period: "Jan/2025",
+      descEN: "Developed a desktop application for Remate Celada. Implemented features like machinery visualization, user management, and data queries using Tauri, TypeScript, and SQLite database.",
+      descES: "Desarrollé una aplicación de escritorio para Remate Celada. El proyecto incluyó la implementación de funcionalidades como visualización de maquinaria, gestión de usuarios y consultas de datos, utilizando tecnologías como Tauri, TypeScript y una base de datos SQLite correspondiente.",
+      img: remate
+    }
+  ];
+  
 
   // works en un array
   const works = [
@@ -233,8 +257,34 @@ function App() {
         </section>
 
         <section id="experience" className="experience-section">
-          <h2>{language === 'EN' ? 'Experience' : 'Experiencia'}</h2>
+          <div className="container py-5">
+            <h2 className="mb-4 typewriter-heading">
+              <Typewriter
+                options={{
+                  strings: ['Experience', 'Experiencia', '経験'],
+                  autoStart: true,
+                  loop: true,
+                  delay: 100,
+                  deleteSpeed: 50,
+                }}
+              />
+            </h2>
+
+            <div className="row g-4">
+              {experiences.map(exp => (
+                <div key={exp.id} className="col-md-6">
+                  <div className="experience-card shadow-sm p-4">
+                    <h5>{language === 'EN' ? exp.titleEN : exp.titleES}</h5>
+                    <p className="text-muted">{exp.period}</p>
+                    <p>{language === 'EN' ? exp.descEN : exp.descES}</p>
+                    <img src={exp.img} style={{ width: "100px" }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </section>
+
 
                 {/* Works */}
         <section id="works" className="works-section">

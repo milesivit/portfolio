@@ -196,8 +196,8 @@ function App() {
               <ul className="navbar-nav ms-auto">
                 <li className="nav-item"><a className="nav-link" href="#skills">{language === 'EN' ? 'Skills' : 'Habilidades'}</a></li>
                 <li className="nav-item"><a className="nav-link" href="#experience">{language === 'EN' ? 'Experience' : 'Experiencia'}</a></li>
-                <li className="nav-item"><a className="nav-link" href="#works">{language === 'EN' ? 'Works' : 'Proyectos'}</a></li>
                 <li className="nav-item"><a className="nav-link" href="#about">{language === 'EN' ? 'About me' : 'Sobre mi'}</a></li>
+                <li className="nav-item"><a className="nav-link" href="#works">{language === 'EN' ? 'Works' : 'Proyectos'}</a></li>
                 <li className="nav-item">
                   <a 
                     className="nav-link"
@@ -298,80 +298,8 @@ function App() {
           </div>
         </section>
 
-
-                {/* Works */}
-        <section id="works" className="works-section">
-          <div className="container py-5">
-            <h2 className="mb-4 typewriter-heading">
-              <Typewriter
-                options={{
-                  strings: ['Works', 'Proyectos', 'プロジェクト'],
-                  autoStart: true,
-                  loop: true,
-                  delay: 100,
-                  deleteSpeed: 50,
-                }}
-              />
-            </h2>
-
-            <div className="row g-4">
-              {works.map(work => (
-                <div key={work.id} className="col-md-4">
-                  <div className="work-card shadow-sm d-flex flex-column align-items-center">
-                    <h5>{language === 'EN' ? work.titleEN : work.titleES}</h5>
-
-                    {/* Cuadrado clickeable al repo */}
-                    <div 
-                      onClick={() => window.open(work.repo, "_blank")}
-                      className="repo-box"
-                    >
-                        <img 
-                          src={git}   // importa tu PNG o SVG de GitHub arriba
-                          alt="GitHub Repo"
-                          style={{ width: '100px', height: '37px' }}
-                        />
-                    </div>
-
-                    {/* Botón para abrir modal */}
-                    <Button 
-                      label={language === 'EN' ? "Information" : "Información"} 
-                      onClick={() => setVisibleWork(work.id)} 
-                      className="custom-work-btn mt-3"
-                    />
-                  </div>
-
-                  {/* Modal para cada work */}
-                  <Dialog 
-                    header={language === 'EN' ? work.titleEN : work.titleES} 
-                    visible={visibleWork === work.id} 
-                    className="work-dialog"
-                    onHide={() => setVisibleWork(null)}
-                  >
-                    <div className="dialog-content">
-                      <p>{language === 'EN' ? work.descEN : work.descES}</p>
-                    </div>
-
-                    {(work.id === 1 || work.id === 2) && (
-                      <Button
-                        label={language === 'EN' ? "Live demo" : "Ver página"}
-                        onClick={() => {
-                          const liveLink = work.id === 1 
-                            ? "https://retrocine.netlify.app/" 
-                            : "https://decaminoacasa.vercel.app/";
-                          window.open(liveLink, "_blank");
-                        }}
-                        className="custom-work-btn mt-3"
-                      />
-                    )}
-                  </Dialog>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* About */}
-        <section id="about" className="about-section">
+         {/* About */}
+         <section id="about" className="about-section">
           <div className="container py-5">
             <h2 className="mb-4 typewriter-heading">
               <Typewriter
@@ -488,6 +416,77 @@ function App() {
 
         </section>
 
+
+                {/* Works */}
+        <section id="works" className="works-section">
+          <div className="container py-5">
+            <h2 className="mb-4 typewriter-heading">
+              <Typewriter
+                options={{
+                  strings: ['Works', 'Proyectos', 'プロジェクト'],
+                  autoStart: true,
+                  loop: true,
+                  delay: 100,
+                  deleteSpeed: 50,
+                }}
+              />
+            </h2>
+
+            <div className="row g-4">
+              {works.map(work => (
+                <div key={work.id} className="col-md-4">
+                  <div className="work-card shadow-sm d-flex flex-column align-items-center">
+                    <h5>{language === 'EN' ? work.titleEN : work.titleES}</h5>
+
+                    {/* Cuadrado clickeable al repo */}
+                    <div 
+                      onClick={() => window.open(work.repo, "_blank")}
+                      className="repo-box"
+                    >
+                        <img 
+                          src={git}   // importa tu PNG o SVG de GitHub arriba
+                          alt="GitHub Repo"
+                          style={{ width: '100px', height: '37px' }}
+                        />
+                    </div>
+
+                    {/* Botón para abrir modal */}
+                    <Button 
+                      label={language === 'EN' ? "Information" : "Información"} 
+                      onClick={() => setVisibleWork(work.id)} 
+                      className="custom-work-btn mt-3"
+                    />
+                  </div>
+
+                  {/* Modal para cada work */}
+                  <Dialog 
+                    header={language === 'EN' ? work.titleEN : work.titleES} 
+                    visible={visibleWork === work.id} 
+                    className="work-dialog"
+                    onHide={() => setVisibleWork(null)}
+                  >
+                    <div className="dialog-content">
+                      <p>{language === 'EN' ? work.descEN : work.descES}</p>
+                    </div>
+
+                    {(work.id === 1 || work.id === 2) && (
+                      <Button
+                        label={language === 'EN' ? "Live demo" : "Ver página"}
+                        onClick={() => {
+                          const liveLink = work.id === 1 
+                            ? "https://retrocine.netlify.app/" 
+                            : "https://decaminoacasa.vercel.app/";
+                          window.open(liveLink, "_blank");
+                        }}
+                        className="custom-work-btn mt-3"
+                      />
+                    )}
+                  </Dialog>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         <footer className="footer bg-body-tertiary text-center py-3">
           <p className="mb-0">

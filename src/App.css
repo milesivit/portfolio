@@ -199,6 +199,92 @@ html {
   margin-bottom: 0.5rem;
 }
 
+.about-photo {
+  max-width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.about-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.carousel-item img {
+  max-height: 300px; /* ajusta según necesites */
+  object-fit: cover;
+}
+
+.about-section .p-carousel-item img {
+  width: 100%;          /* que ocupe todo el ancho del carrusel */
+  height: 100px;        /* altura fija para todas */
+  object-fit: cover;    /* recorta manteniendo proporción */
+  border-radius: 10px;  /* opcional, bordes redondeados */
+}
+
+img.about-photo,
+.about-section .p-carousel-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.about-card {
+  background-color: #eac8f0; 
+  border-radius: 15px;
+  text-align: left;
+  height: 100%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  padding: 25px;
+  font-size: 1.1rem; /* aumenta la tipografía */
+}
+
+.education-images {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+}
+
+.edu-item {
+  text-align: center;
+}
+
+.edu-img {
+  width: 50px;
+  height: 55px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.edu-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.edu-item p {
+  margin-top: 5px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.custom-social-btn {
+  background: linear-gradient(135deg, #a5f1b1, #d9b4ea);
+  color: #333 !important;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+.custom-social-btn:hover {
+  background: linear-gradient(135deg, #d9b4ea, #a5f1b1);
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
 
 
 /* === Desktop por defecto (>=1025px) === */

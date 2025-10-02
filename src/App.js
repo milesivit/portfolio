@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Dialog } from 'primereact/dialog';
 import { Button } from 'primereact/button';
 import Typewriter from 'typewriter-effect';
+import { Carousel } from 'primereact/carousel';
 
 import javaLogo from './img/java.png';
 import frontendLogo from './img/ant.png';
@@ -14,6 +15,11 @@ import vboxLogo from './img/virtualbox.png';
 import git from './img/git.png';
 import ferre from './img/ferre.png';
 import remate from './img/logo.png';
+import foto1 from './img/foto1.jpeg';
+import foto2 from './img/foto2.jpeg';
+import foto3 from './img/foto3.jpeg';
+import itec from './img/itec.jpeg';
+import belisario from './img/belisario.png';
 
 function App() {
   const [language, setLanguage] = useState('EN');
@@ -94,8 +100,8 @@ function App() {
       titleEN: "Desktop Application – Remate Celada (Remote task - Jan/2025)",
       titleES: "Aplicación de escritorio – Remate Celada (Tarea remota - Enero/2025)",
       period: "Jan/2025",
-      descEN: "Developed a desktop application for Remate Celada. Implemented features like machinery visualization, user management, and data queries using Tauri, TypeScript, and SQLite database.",
-      descES: "Desarrollé una aplicación de escritorio para Remate Celada. El proyecto incluyó la implementación de funcionalidades como visualización de maquinaria, gestión de usuarios y consultas de datos, utilizando tecnologías como Tauri, TypeScript y una base de datos SQLite correspondiente.",
+      descEN: "I worked with a colleague who assigned me tasks for a desktop application for Remate Celada. Implemented features like machinery visualization, user management, and data queries using Tauri, TypeScript, and SQLite database.",
+      descES: "Trabajé con un colega que me derivó tareas de una aplicación de escritorio para Remate Celada. El proyecto incluyó la implementación de funcionalidades como visualización de maquinaria, gestión de usuarios y consultas de datos, utilizando tecnologías como Tauri, TypeScript y una base de datos SQLite correspondiente.",
       img: remate
     }
   ];
@@ -152,6 +158,13 @@ function App() {
       descES: "API REST desarrollada con Node.js y Express, que gestiona la lógica del sistema de usuarios y productos. Provee endpoints para realizar un CRUD completo, maneja autenticación y validaciones, y envía los errores al frontend para un manejo correcto de las notificaciones."
     }
   ];
+
+  const aboutPhotos = [
+    { id: 1, src: foto1, alt: "Childhood" },
+    { id: 2, src: foto2, alt: "School years" },
+    { id: 3, src: foto3, alt: "Current" },
+  ];
+  
 
   return (
       <div>
@@ -356,10 +369,125 @@ function App() {
             </div>
           </div>
         </section>
-    
+
+        {/* About */}
         <section id="about" className="about-section">
-          <h2>{language === 'EN' ? 'About me' : 'Sobre mi'}</h2>
+          <div className="container py-5">
+            <h2 className="mb-4 typewriter-heading">
+              <Typewriter
+                options={{
+                  strings: ['About me','Sobre mí','私について'],
+                  autoStart: true,
+                  loop: true,
+                  delay: 100,
+                  deleteSpeed: 50,
+                }}
+              />
+            </h2>
+
+            <div className="row align-items-center">
+              {/* Columna del carrusel */}
+              <div className="col-md-4">
+                <Carousel
+                  value={aboutPhotos}
+                  numVisible={1}
+                  numScroll={1}
+                  circular
+                  autoplayInterval={3000}
+                  itemTemplate={(photo) => (
+                    <img
+                      src={photo.src}
+                      alt={photo.alt}
+                      className="img-fluid rounded shadow-sm"
+                      style={{ cursor: "pointer" }}
+                      onClick={() => setVisibleWork(photo.id)}
+                    />
+                  )}
+                />
+              </div>
+
+              {/* Columna de texto */}
+              <div className="col-md-8">
+                <div className="about-card">
+                  <p style={{textAlign: "justify"}}>
+                    {language === 'EN' ? (
+                      <>
+                        Since I was little, I’ve been passionate about computing, and that
+                        curiosity led me to study programming. At 18, I began my career, and by 20,
+                        I joined a company as a backend developer.  
+                        I’m always eager to learn, take on new challenges, and grow as a professional.
+                        <br /><br />
+                        I graduated from high school in 2022, where I served as flag bearer in
+                        primary school and as second-in-command (escort) in secondary school.  
+                        <br /><br />
+
+                        Currently, I am studying a Technical Degree in Software Development (2023–2025).  
+
+                        {/* Imágenes de educación */}
+                        <div className="education-images mt-3 d-flex gap-3">
+                          <div className="edu-item text-center">
+                            <img src={belisario} alt="Belisario" className="edu-img" />
+                            <p>Belisario R. – High School</p>
+                          </div>
+                          <div className="edu-item text-center">
+                            <img src={itec} alt="ITEC" className="edu-img" />
+                            <p>ITEC – Software Development</p>
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        Desde chica me apasiona la informática, y esa curiosidad me llevó a estudiar
+                        programación. A los 18 comencé mi carrera y, a los 20, me incorporé a una
+                        empresa como desarrolladora backend.  
+                        Siempre busco aprender, asumir nuevos desafíos y crecer profesionalmente.
+                        <br /><br />
+                        Egresé del secundario en 2022, donde fui abanderada en la primaria y escolta
+                        en la secundaria.  <br /><br />
+                        Actualmente estudio la Tecnicatura en Desarrollo de Software (2023–2025).  
+
+                        {/* Imágenes de educación */}
+                        <div className="education-images mt-3 d-flex gap-3">
+                          <div className="edu-item text-center">
+                            <img src={belisario} alt="Belisario" className="edu-img" />
+                            <p>Belisario R. – Secundario</p>
+                          </div>
+                          <div className="edu-item text-center">
+                            <img src={itec} alt="ITEC" className="edu-img" />
+                            <p>ITEC – Tecnicatura en Software</p>
+                          </div>
+                        </div>
+                      </>
+                    )}
+                  </p>
+                </div>
+              <div className="social-buttons mt-4 d-flex gap-3 justify-content-center">
+                <Button 
+                  icon="pi pi-whatsapp" 
+                  className="custom-social-btn"
+                  onClick={() => window.open("https://wa.me/543463645091", "_blank")}
+                  tooltip={language === 'EN' ? "WhatsApp" : "WhatsApp"}
+                />
+                <Button 
+                  icon="pi pi-linkedin" 
+                  className="custom-social-btn"
+                  onClick={() => window.open("https://www.linkedin.com/in/milena-sivit/", "_blank")}
+                  tooltip={language === 'EN' ? "LinkedIn" : "LinkedIn"}
+                />
+                <Button 
+                  icon="pi pi-github" 
+                  className="custom-social-btn"
+                  onClick={() => window.open("https://github.com/milesivit", "_blank")}
+                  tooltip={language === 'EN' ? "GitHub" : "GitHub"}
+                />
+              </div>
+              </div>
+            </div>
+          </div>
+          
+
         </section>
+
 
         <footer className="footer bg-body-tertiary text-center py-3">
           <p className="mb-0">

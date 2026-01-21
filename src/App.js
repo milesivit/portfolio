@@ -15,9 +15,11 @@ import vboxLogo from './img/virtualbox.png';
 import git from './img/git.png';
 import ferre from './img/ferre.png';
 import remate from './img/logo.png';
+import bajitos from './img/bajitos.jpeg'
 import foto1 from './img/foto1.jpeg';
 import foto2 from './img/foto2.jpeg';
 import foto3 from './img/foto3.jpeg';
+import foto4 from './img/foto4.jpeg'
 import itec from './img/itec.jpeg';
 import belisario from './img/belisario.png';
 
@@ -31,7 +33,7 @@ function App() {
   };
 
   const cvLinkEN = "https://drive.google.com/file/d/1465E_bdExknG0O735UG5WSJXpaM6J0ff/view?usp=sharing";
-  const cvLinkES = "https://drive.google.com/file/d/1tpT3AEMFhMmYz7zRk4ZzWEvgVfa7-Ah1/view?usp=sharing";
+  const cvLinkES = "https://drive.google.com/file/d/15dBlfg8vT6c87HQmQ5Z6PJ0YXYKZyJiA/view?usp=sharing";
 
   //skills en un array
   const skills = [
@@ -87,22 +89,34 @@ function App() {
 
   const experiences = [
     {
+      id: 2,
+      titleEN: "Desktop Application – Remate Celada (Remote task)",
+      titleES: "Aplicación de escritorio – Remate Celada (Tarea remota)",
+      periodEN: "Jan/2025 – Apr/2025",
+      periodES: "Enero/2025 – Abril/2025",
+      descEN: "I worked with a colleague who assigned me tasks for a desktop application for Remate Celada. Implemented features like machinery visualization, user management, and data queries using Tauri, TypeScript, and SQLite database.",
+      descES: "Trabajé con un colega que me derivó tareas de una aplicación de escritorio para Remate Celada. El proyecto incluyó la implementación de funcionalidades como visualización de maquinaria, gestión de usuarios y consultas de datos, utilizando tecnologías como Tauri, TypeScript y una base de datos SQLite correspondiente.",
+      img: remate
+    },
+    {
       id: 1,
-      titleEN: "Programmer / Ferretera Central",
-      titleES: "Programadora / Ferretera Central",
-      period: "03/02/2025 – 07/08/2025",
+      titleEN: "Programmer – Ferretera Central",
+      titleES: "Programadora – Ferretera Central",
+      periodEN: "Feb/2025 – Aug/2025",
+      periodES: "Febrero/2025 – Agosto/2025",
       descEN: "Back-end development: implemented endpoints covering the full flow from object layer to controller, allowing front-end consumption using Java Spring Boot. Also worked on front-end with Java Spring Boot, consuming API endpoints. Collaborated on efficient data access and integration between the database and application layers. Managed and resolved tickets on time using the osTicket support tool.",
       descES: "En desarrollo back-end, programé endpoints implementando el flujo completo desde la capa de objetos hasta el controlador, permitiendo que el front-end los consuma, utilizando Java Spring Boot. También trabajé en front-end con Java Spring Boot, consumiendo los endpoints de la API. Colaboré en el diseño de un acceso eficiente a los datos e integración entre la base de datos y las capas de la aplicación. Además, gestioné y resolví tickets en tiempo y forma mediante la herramienta de soporte osTicket.",
       img: ferre
     },
     {
-      id: 2,
-      titleEN: "Desktop Application – Remate Celada (Remote task - Jan/2025)",
-      titleES: "Aplicación de escritorio – Remate Celada (Tarea remota - Enero/2025)",
-      period: "Jan/2025",
-      descEN: "I worked with a colleague who assigned me tasks for a desktop application for Remate Celada. Implemented features like machinery visualization, user management, and data queries using Tauri, TypeScript, and SQLite database.",
-      descES: "Trabajé con un colega que me derivó tareas de una aplicación de escritorio para Remate Celada. El proyecto incluyó la implementación de funcionalidades como visualización de maquinaria, gestión de usuarios y consultas de datos, utilizando tecnologías como Tauri, TypeScript y una base de datos SQLite correspondiente.",
-      img: remate
+      id: 3,
+      titleEN: "Desktop Application – Esos Locos Bajitos (Part-time remote work)",
+      titleES: "Sistema de gestión de stock – Esos Locos Bajitos (Trabajo remoto a tiempo parcial)",
+      periodEN: "Dec 2025 – Present",
+      periodES: "Diciembre/2025 – Actualidad",
+      descEN: "Comprehensive development of a stock management system for a local business, carried out individually from scratch. The project includes database design and modeling, backend and frontend development, and the implementation of validations and business logic. Throughout the process, I gained experience working with direct client feedback, adjusting features based on real business needs.",
+      descES: "Desarrollo integral de un sistema de gestión de stock para el local, realizado de manera individual desde cero. El proyecto incluye el diseño y modelado de la base de datos, desarrollo del backend y frontend, implementación de validaciones y lógica de negocio. Durante el proceso, adquiero experiencia trabajando con feedback directo de clientes, ajustando funcionalidades según necesidades reales del negocio.",
+      img: bajitos
     }
   ];
   
@@ -143,19 +157,19 @@ function App() {
     },
     {
       id: 5,
-      titleES: "Frontend: React consumiendo API REST para CRUD completo",
-      titleEN: "Frontend: React consuming a REST API for full CRUD operations",
-      repo: "https://github.com/milesivit/FRONT-REACT2",
-      descEN: "Web application built with React that consumes a REST API to perform full CRUD operations for users and products. It includes a password recovery system with Gmail notifications, user and product management, and direct integration with the backend to keep data synchronized.",
-      descES: "Aplicación web desarrollada en React que consume una API REST para realizar un CRUD completo de usuarios y productos. Incluye sistema de recuperación de contraseña con notificación por Gmail, gestión de notificaciones y conexión directa con el backend para mantener la información sincronizada."
+      titleES: "Frontend: React consumiendo API REST para un sistema de reserva de containers",
+      titleEN: "Frontend: React consuming a REST API for a container reservation system",
+      repo: "https://github.com/milesivit/no-me-la-container-front",
+      descEN: "Web application developed in React that consumes a REST API to build a reservation system. It includes a chatbot, integrates a real-time weather API, features well-implemented CRUD operations, and clearly defined user, client, and employee roles.",
+      descES: "Aplicación web desarrollada en React que consume una API REST para realizar un sistema de reserva. Incluye Chatbot, consume una API de clima a tiempo real, buena implementación en CRUDS, rol de usuario, cliente y empleado bien detallado."
     },
     {
       id: 6,
-      titleES: "Backend: API REST con Node.js y Express",
-      titleEN: "Backend: API REST with Node.js and Express",
-      repo: "https://github.com/milesivit/back-nodejs",
-      descEN: "REST API built with Node.js and Express, handling the system’s logic for users and products. It provides endpoints for full CRUD operations, manages authentication and validations, and sends errors to the frontend for proper notification handling.",
-      descES: "API REST desarrollada con Node.js y Express, que gestiona la lógica del sistema de usuarios y productos. Provee endpoints para realizar un CRUD completo, maneja autenticación y validaciones, y envía los errores al frontend para un manejo correcto de las notificaciones."
+      titleES: "Backend: API REST con Node.js y Express para sistema de reserva de containers",
+      titleEN: "Backend: REST API with Node.js and Express for a container reservation system",
+      repo: "https://github.com/milesivit/no-me-la-container-back",
+      descEN: "REST API built with Node.js and Express, handling the system’s logic for users. It provides endpoints for full CRUD operations, manages authentication and validations, and sends errors to the frontend for proper notification handling.",
+      descES: "API REST desarrollada con Node.js y Express, que gestiona la lógica del sistema. Provee endpoints para realizar un CRUD completo, maneja autenticación y validaciones, y envía los errores al frontend para un manejo correcto de las notificaciones."
     }
   ];
 
@@ -163,6 +177,7 @@ function App() {
     { id: 1, src: foto1, alt: "Childhood" },
     { id: 2, src: foto2, alt: "School years" },
     { id: 3, src: foto3, alt: "Current" },
+    {id: 4, src: foto4, alt: "title"}
   ];
   
 
@@ -229,7 +244,7 @@ function App() {
             <h2 className="mb-4 typewriter-heading">
             <Typewriter
                 options={{
-                  strings: ['Skills', 'Habilidades', 'スキル'],
+                  strings: ['Skills', 'Habilidades'],
                   autoStart: true,
                   loop: true,
                   delay: 100,
@@ -274,7 +289,7 @@ function App() {
             <h2 className="mb-4 typewriter-heading">
               <Typewriter
                 options={{
-                  strings: ['Experience', 'Experiencia', '経験'],
+                  strings: ['Experience', 'Experiencia'],
                   autoStart: true,
                   loop: true,
                   delay: 100,
@@ -288,9 +303,15 @@ function App() {
                 <div key={exp.id} className="col-md-6">
                   <div className="experience-card shadow-sm p-4">
                     <h5>{language === 'EN' ? exp.titleEN : exp.titleES}</h5>
+                    <h7>{language === 'EN' ? exp.periodEN : exp.periodES}</h7>
                     <p className="text-muted">{exp.period}</p>
                     <p>{language === 'EN' ? exp.descEN : exp.descES}</p>
-                    <img src={exp.img} style={{ width: "100px" }} />
+                    <img
+                      src={exp.img}
+                      style={{
+                        width: exp.id === 3 ? "50px" : "100px"
+                      }}
+                    />
                   </div>
                 </div>
               ))}
@@ -304,7 +325,7 @@ function App() {
             <h2 className="mb-4 typewriter-heading">
               <Typewriter
                 options={{
-                  strings: ['About me','Sobre mí','私について'],
+                  strings: ['About me','Sobre mí'],
                   autoStart: true,
                   loop: true,
                   delay: 100,
@@ -349,7 +370,7 @@ function App() {
                         primary school and as second-in-command (escort) in secondary school.  
                         <br /><br />
 
-                        Currently, I am studying a Technical Degree in Software Development (2023–2025).  
+                        Technical Degree in Software Development, completed on December 4, 2025.
 
                         {/* Imágenes de educación */}
                         <div className="education-images mt-3 d-flex gap-3">
@@ -372,7 +393,7 @@ function App() {
                         <br /><br />
                         Egresé del secundario en 2022, donde fui abanderada en la primaria y escolta
                         en la secundaria.  <br /><br />
-                        Actualmente estudio la Tecnicatura en Desarrollo de Software (2023–2025).  
+                        Tecnicatura en Desarrollo de Software, finalizada el 4 de diciembre de 2025. 
 
                         {/* Imágenes de educación */}
                         <div className="education-images mt-3 d-flex gap-3">
@@ -423,7 +444,7 @@ function App() {
             <h2 className="mb-4 typewriter-heading">
               <Typewriter
                 options={{
-                  strings: ['Works', 'Proyectos', 'プロジェクト'],
+                  strings: ['Works', 'Proyectos'],
                   autoStart: true,
                   loop: true,
                   delay: 100,

@@ -27,6 +27,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  font-size: 14px; /* default es 14px */
 }
 
 .home-section {
@@ -291,16 +292,52 @@ img.about-photo,
 .bg-en { background-image: url('./img/portfoliodesktopen.gif'); }
 .bg-es { background-image: url('./img/portfoliodesktopes.gif'); }
 
+.skills-section {
+  min-height: 100vh;
+  background-image: url('./img/habilidadesdesktop.png');
+  background-repeat: no-repeat;
+}
+
+.experience-section {
+  background-image: url('./img/experienciadesktop.png');
+}
+
+.about-section {
+  background-image: url('./img/aboutdesktop.gif');
+  background-repeat: no-repeat;
+}
+
+.works-section{
+  background-image: url('./img/workdesktop.gif');
+  background-repeat: no-repeat;
+}
+
 /* === Tablet (769px – 1024px) === */
 @media (max-width: 1024px) and (min-width: 769px) {
   .bg-en { background-image: url('./img/portfolioTabletEn.gif'); }
   .bg-es { background-image: url('./img/portfolioTablet.gif'); }
+
+  .about-section {
+    background-image: url('./img/abouttablet.gif');
+    background-repeat: no-repeat;
+  }
+
 }
 
 /* === Mobile (<=768px) === */
 @media (max-width: 768px) {
   .bg-en { background-image: url('./img/portfolioMobileEn.gif'); }
   .bg-es { background-image: url('./img/portfolioMobileEs.gif'); }
+
+  .about-section {
+    background-image: url('./img/aboutmobile.gif');
+    background-repeat: no-repeat;
+  }
+
+  .works-section {
+    background-image: url('./img/workmobile.gif');
+    background-repeat: no-repeat;
+  }
 
   .skill-dialog {
     width: 90vw !important;   /* Ocupa casi todo el ancho */

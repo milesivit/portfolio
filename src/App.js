@@ -186,7 +186,7 @@ function App() {
         {/* Navbar */}
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="#top">
               <Typewriter
                 options={{
                   strings: ['Milena Sivit'],

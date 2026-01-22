@@ -308,6 +308,7 @@ function App() {
                     <p>{language === 'EN' ? exp.descEN : exp.descES}</p>
                     <img
                       src={exp.img}
+                      alt={exp.titleEN || "Experiencia laboral"}
                       style={{
                         width: exp.id === 3 ? "50px" : "100px"
                       }}

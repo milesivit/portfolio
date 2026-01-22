@@ -32,7 +32,7 @@ function App() {
     setLanguage(language === 'EN' ? 'ES' : 'EN');
   };
 
-  const cvLinkEN = "https://drive.google.com/file/d/1465E_bdExknG0O735UG5WSJXpaM6J0ff/view?usp=sharing";
+  const cvLinkEN = "https://drive.google.com/file/d/19C3u8Y6jMBlat7LDfva_gKBk4aT85j6F/view?usp=sharing";
   const cvLinkES = "https://drive.google.com/file/d/15dBlfg8vT6c87HQmQ5Z6PJ0YXYKZyJiA/view?usp=sharing";
 
   //skills en un array
